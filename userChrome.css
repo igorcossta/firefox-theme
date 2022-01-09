@@ -1,0 +1,277 @@
+:root {
+  /* Minimal Functional Fox variables */
+  --mff-bg: #363636;
+  --mff-icon-color: #e0fbfc;
+  --mff-sidebar-bg: var(--mff-bg);
+  --mff-tab-selected-bg: #ee6c4d;
+  --mff-urlbar-color: #e0fbfc;
+  --mff-urlbar-focused-color: #e0fbfc;
+  --mff-urlbar-results-color: #e0fbfc;
+  --mff-urlbar-results-url-color: #98c1d9;
+  /* --mff-tab-selected-bg: linear-gradient(
+    90deg,
+    rgba(48, 80, 117, 1) 0%,
+    rgba(38, 89, 149, 1) 53%,
+    rgba(9, 105, 217, 1) 100%
+  ); */
+  --mff-tab-selected-bg: #272727d2;
+
+  /* Overriden Firefox variables */
+  --autocomplete-popup-background: var(--mff-bg) !important;
+  --default-arrowpanel-background: var(--mff-bg) !important;
+  --default-arrowpanel-color: #fefefa !important;
+  --lwt-toolbarbutton-icon-fill: var(--mff-icon-color) !important;
+  --panel-disabled-color: #f9f9fa80;
+  --toolbar-bgcolor: var(--mff-bg) !important;
+  --urlbar-separator-color: transparent !important;
+
+  /* if active always shows the tab close button */
+  --show-tab-close-button: none; /* DEFAULT: -moz-inline-box; */
+
+  /* if active only shows the tab close button on hover*/
+  --show-tab-close-button-hover: -moz-inline-box; /* DEFAULT: -moz-inline-box; */
+}
+
+/* 
+,--------.          ,--.              ,-----.                    
+'--.  .--'  ,--,--. |  |-.   ,---.    |  |) /_   ,--,--. ,--.--. 
+   |  |    ' ,-.  | | .-. ' (  .-'    |  .-.  \ ' ,-.  | |  .--' 
+   |  |    \ '-'  | | `-' | .-'  `)   |  '--' / \ '-'  | |  |    
+   `--'     `--`--'  `---'  `----'    `------'   `--`--' `--' 
+*/
+
+/* move the tabs container to below the search bar */
+#titlebar {
+  -moz-box-ordinal-group: 3 !important;
+}
+
+/* remove the border from tabs container */
+#navigator-toolbox {
+  border: none !important;
+}
+
+/* remove the space left and right from tabs bar */
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
+
+/* remove the vertical line when tabs bar active scrollable mode */
+spacer {
+  display: none !important;
+}
+
+/* remove the 'new tab' button from tabs bar */
+#tabs-newtab-button,
+#TabsToolbar #new-tab-button {
+  display: none !important;
+}
+
+/* remove the private search icon from right side of tabs bar */
+.private-browsing-indicator {
+  display: none !important;
+}
+
+/* remove the margin and border from tabs */
+.tab-background {
+  border-radius: 0 !important;
+  margin-block: 0 !important;
+}
+
+/* remove the padding from tabs */
+.tabbrowser-tab {
+  padding-inline: 0 !important;
+}
+
+/* change the background color when tab is selected */
+.tab-background[selected="true"] {
+  background: var(--mff-tab-selected-bg) !important;
+}
+
+/* change the background color when tab is not selected  */
+.tab-background:not[visuallyselected] {
+  background: var(--mff-tab-selected-bg) !important;
+  opacity: 0.5 !important;
+}
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  border-left: none !important;
+}
+
+/* make tabs take all free width */
+/* adaptive tab width */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+  max-width: 100% !important;
+}
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+  max-width: 100% !important;
+}
+
+/* tab close button options */
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: var(--show-tab-close-button) !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  display: var(--show-tab-close-button-hover) !important;
+}
+
+/* 
+ ,---.                                   ,--.        ,-----.                    
+'   .-'   ,---.   ,--,--. ,--.--.  ,---. |  ,---.    |  |) /_   ,--,--. ,--.--. 
+`.  `-.  | .-. : ' ,-.  | |  .--' | .--' |  .-.  |   |  .-.  \ ' ,-.  | |  .--' 
+.-'    | \   --. \ '-'  | |  |    \ `--. |  | |  |   |  '--' / \ '-'  | |  |    
+`-----'   `----'  `--`--' `--'     `---' `--' `--'   `------'   `--`--' `--'
+*/
+
+/* remove the close, minimize and maximize buttons */
+.titlebar-buttonbox-container {
+  display: none !important;
+}
+
+/* change the icons of back and forward buttons */
+#back-button {
+  list-style-image: url("svg/left-arrow.svg") !important;
+}
+#forward-button {
+  list-style-image: url("svg/right-arrow.svg") !important;
+}
+
+/* remove bookmark icon */
+#star-button,
+#star-button-box {
+  display: none !important;
+}
+
+/* remove tracking protection icon  */
+#tracking-protection-icon-container {
+  display: none !important;
+}
+
+#urlbar-results {
+  color: var(--mff-urlbar-results-color) !important;
+}
+
+.urlbarView-url,
+.search-panel-one-offs-container {
+  color: var(--mff-urlbar-results-url-color) !important;
+}
+
+#urlbar-input {
+  color: var(--mff-urlbar-color) !important;
+  text-align: start !important;
+}
+
+toolbar {
+  background-image: none !important;
+}
+
+#urlbar-background {
+  opacity: 0.98 !important;
+}
+
+#navigator-toolbox,
+toolbaritem {
+  border: none !important;
+}
+
+#urlbar-background {
+  background-color: #252525 !important;
+  border: none !important;
+}
+
+.toolbar-items {
+  background-color: var(--mff-bg) !important;
+}
+
+#sidebar-search-container {
+  background-color: var(--mff-sidebar-bg) !important;
+}
+
+/* change the width of the search bar and add some margin at sides */
+/* ADD 5 FLEXIBLE SPACE ON EACH SIDE FROM CUSTOMIZE MENU ON FIREFOX */
+/* #urlbar {
+  max-width: 70% !important;
+  margin: 0 15% !important;
+} */
+
+#urlbar-input:focus {
+  color: var(--mff-urlbar-focused-color) !important;
+}
+
+.megabar[breakout-extend="true"]:not([open="true"]) > #urlbar-background {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* apply border at the top of window (to work properly with gnome rounded) */
+#nav-bar {
+  border-top-right-radius: 5px !important;
+  border-top-left-radius: 5px !important;
+}
+
+/* 
+ ,---.                            ,--.                       ,--.                         
+'   .-'   ,---.   ,---.   ,--,--. |  |,-.   ,---.  ,--.--.   |  |  ,---.  ,---.  ,--,--,  
+`.  `-.  | .-. | | .-. : ' ,-.  | |     /  | .-. : |  .--'   |  | | .--' | .-. | |      \ 
+.-'    | | '-' ' \   --. \ '-'  | |  \  \  \   --. |  |      |  | \ `--. ' '-' ' |  ||  | 
+`-----'  |  |-'   `----'  `--`--' `--'`--'  `----' `--'      `--'  `---'  `---'  `--''--' 
+         `--'                                          
+*/
+
+/* show favicon when media is playing but tab is hovered */
+.tab-icon-image:not([pinned]) {
+  opacity: 1 !important;
+}
+
+/* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
+.tab-icon-overlay:not([crashed]),
+.tab-icon-overlay[pinned][crashed][selected] {
+  top: 5px !important;
+  z-index: 1 !important;
+
+  padding: 1.5px !important;
+  inset-inline-end: -8px !important;
+  width: 16px !important;
+  height: 16px !important;
+
+  border-radius: 10px !important;
+}
+
+/* style and position speaker icon */
+.tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  stroke: transparent !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  fill-opacity: 0.8 !important;
+
+  color: currentColor !important;
+}
+
+.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  margin-inline-end: 9.5px !important;
+}
+
+.tabbrowser-tab:not([image])
+  .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
+  top: 0 !important;
+
+  padding: 0 !important;
+  margin-inline-end: 5.5px !important;
+  inset-inline-end: 0 !important;
+}
+
+.tab-icon-overlay:not([crashed])[soundplaying]:hover,
+.tab-icon-overlay:not([crashed])[muted]:hover,
+.tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
+  color: currentColor !important;
+  fill-opacity: 0.95 !important;
+}
+
+.tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
+.tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
+.tabbrowser-tab[selected]
+  .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
+  color: currentColor !important;
+  fill-opacity: 0.95 !important;
+}
