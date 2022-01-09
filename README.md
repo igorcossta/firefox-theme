@@ -1,11 +1,9 @@
-<h1 align="center"> Firefox Theme </h1>
+<a href="https://github.com/igorcossta/firefox-theme" target="_blank">
+    <img align="center" src="https://raw.githubusercontent.com/igorcossta/firefox-theme/master/index.png" alt="preview" />
+</a>
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=UNDER%20CONSTRUCTION&color=GREEN&style=for-the-badge"/>
+    <img src="http://img.shields.io/static/v1?label=STATUS&message=UNDER%20CONSTRUCTION&color=GREEN&style=for-the-badge"/>
 </p>
-
-<div align="center">
-![firefox theme image](https://raw.githubusercontent.com/igorcossta/firefox-theme/master/index.png)
-</div>
 
 ## 👇 Index
 
@@ -25,6 +23,11 @@
 7. Move the `files` of this repository into the directory.
 8. Make all the customizations you want on **userChrome.css**.
 9. Enjoy!
+
+## Thanks to
+* [Minimal Fox](https://github.com/mut-ex/minimal-functional-fox)
+* [Simple Fox](https://github.com/migueravila/SimpleFox)
+* [Cascade](https://github.com/andreasgrafen/cascade)
 
 ## ⚠️ Notes
 
